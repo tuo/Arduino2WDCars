@@ -17,6 +17,4 @@ exports.control = function(req, res){
 			res.end('stdout:\n' + stdout + '\n\nstderr:\n' + stderr);
 		}
 	});	
-	// res.send({'result': JSON.stringify({response:'json'})});
-
 };
