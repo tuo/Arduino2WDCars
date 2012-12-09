@@ -1,10 +1,10 @@
 var sys = require('sys');
 var exec = require('child_process').exec;
 var child;
-var serial = "com4"; //make sure the serial port is connnected
+var serial = "/dev/cu.SLAB_USBtoUART"; //make sure the serial port is connnected
 exports.control = function(req, res){
 	console.log("received command: " + req.body.command);	
-	var command = "echo " + req.body.command + " > " + serial;
+	var command = "echo '" + req.body.command + "' > " + serial;
 	res.contentType('json');
 	child = exec(command, function(error, stdout, stderr){
 		sys.print('stdout: ' + stdout);
