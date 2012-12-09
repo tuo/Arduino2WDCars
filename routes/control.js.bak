@@ -4,7 +4,7 @@ var child;
 var serial = "com4"; //make sure the serial port is connnected
 exports.control = function(req, res){
 	console.log("received command: " + req.body.command);	
-	var command = "echo " + req.body.command + " > " + serial;
+	var command = "echo '" + req.body.command + "' > " + serial;
 	res.contentType('json');
 	child = exec(command, function(error, stdout, stderr){
 		sys.print('stdout: ' + stdout);
